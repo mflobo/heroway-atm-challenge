@@ -1,0 +1,2 @@
+# Heroway ATM Challenge
+This is my entry on a challenge to implement JavaScript code into a given HTML and CSS number pad. The goal is to make the number pad work and display the value on screen, as well as calculating the optimal result of bills to be dispensed by the fictional ATM once the user confirms the value.
