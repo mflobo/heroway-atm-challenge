@@ -1,15 +1,25 @@
 calculateBills = () => {
+    // get value on display
     let currentValue = document.getElementById("display").value;
+
+    // empty value on display
+    restartDisplay = () => document.getElementById("display").value = '';
+
+    // define error text style
+    setErrorText = () => {
+        document.getElementById("withdrawal").style.color = "red";
+        document.getElementById("withdrawal").style.fontWeight = "bolder";
+    }
 
     if (currentValue % 10 > 0) {
         // error message for impossible withdrawals
-        document.getElementById("withdrawal").style.color = "red";
-        document.getElementById("withdrawal").style.fontWeight = "bolder";
+        setErrorText();
+        restartDisplay();
         document.getElementById("withdrawal").innerHTML = "Não há notas disponíveis para esse pedido de saque.";
-    } else if (currentValue === '') {
+    } else if (currentValue === '' || currentValue == 0) {
         // error message for no value input
-        document.getElementById("withdrawal").style.color = "red";
-        document.getElementById("withdrawal").style.fontWeight = "bolder";
+        setErrorText();
+        restartDisplay();
         document.getElementById("withdrawal").innerHTML = "Nenhum valor de saque foi especificado.";
     } else {
         // sets up an empty bill array
@@ -27,7 +37,7 @@ calculateBills = () => {
             }
         }
 
-        // auxiliary function to update value after bills have been delivered
+        // update value after bills have been delivered
         subtractCurrentValue = (billQuantity, billValue) => {
             currentValue = currentValue - billQuantity * billValue;
         }
@@ -52,5 +62,6 @@ calculateBills = () => {
         document.getElementById("withdrawal").style.color = "initial";
         document.getElementById("withdrawal").style.fontWeight = "initial";
         document.getElementById("withdrawal").innerHTML = bills.toString().trim();
+        restartDisplay();
     }
 }
