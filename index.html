@@ -40,27 +40,27 @@
               </div>
             </div>
             <div class="action">
-              <input type="text" class="input" value="260" readonly />
+              <input id="display" type="text" class="input" value="260" readonly />
               <div class="keyboard">
                 <div class="line">
-                  <div>1</div>
-                  <div>2</div>
-                  <div>3</div>
+                  <div onClick="virtualInput(1)">1</div>
+                  <div onClick="virtualInput(1)">2</div>
+                  <div onClick="virtualInput(3)">3</div>
                 </div>
                 <div class="line">
-                  <div>4</div>
-                  <div>5</div>
-                  <div>6</div>
+                  <div onClick="virtualInput(4)">4</div>
+                  <div onClick="virtualInput(5)">5</div>
+                  <div onClick="virtualInput(6)">6</div>
                 </div>
                 <div class="line">
-                  <div>7</div>
-                  <div>8</div>
-                  <div>9</div>
+                  <div onClick="virtualInput(7)">7</div>
+                  <div onClick="virtualInput(8)">8</div>
+                  <div onClick="virtualInput(9)">9</div>
                 </div>
                 <div class="line">
-                  <div class="action gray">Limpar</div>
-                  <div>0</div>
-                  <div class="action pink">Confirmar</div>
+                  <div onClick="clearAll()" class="action gray">Limpar</div>
+                  <div onClick="virtualInput(0)">0</div>
+                  <div onClick="calculateBills()" class="action pink">Confirmar</div>
                 </div>
               </div>
             </div>
