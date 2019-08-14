@@ -34,23 +34,23 @@ calculateBills = () => {
 
         // bill count using previously described functions
         let hundreds = roundDownQuantity(100);
-        pushBills(hundreds, "R$ 100");
+        pushBills(hundreds, " R$ 100");
         subtractCurrentValue(hundreds, 100);
                 
         let fifties = roundDownQuantity(50);
-        pushBills(fifties, "R$ 50");
+        pushBills(fifties, " R$ 50");
         subtractCurrentValue(fifties, 50);
 
         let twenties = roundDownQuantity(20);
-        pushBills(twenties, "R$ 20");
+        pushBills(twenties, " R$ 20");
         subtractCurrentValue(twenties, 20);
 
         let tens = roundDownQuantity(10);
-        pushBills(tens, "R$ 10");
+        pushBills(tens, " R$ 10");
 
         // display bills
         document.getElementById("withdrawal").style.color = "initial";
         document.getElementById("withdrawal").style.fontWeight = "initial";
-        document.getElementById("withdrawal").innerHTML = bills.toString();
+        document.getElementById("withdrawal").innerHTML = bills.toString().trim();
     }
 }
